@@ -1,0 +1,42 @@
+
+SHOW DATABASES;
+CREATE DATABASE myflaskapp;
+USE myflaskapp;
+
+CREATE TABLE users(
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    username VARCHAR(30),
+    password VARCHAR(100), 
+    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP    
+);
+
+
+CREATE TABLE articles (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY, 
+    title VARCHAR(255), 
+    author VARCHAR(100), 
+    body TEXT, 
+    create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE adopt(
+    id INT(11) AUTO_INCREMENT PRIMARY KEY, 
+    animal VARCHAR(30), 
+    breed VARCHAR(30), 
+    city VARCHAR(20),
+    body TEXT, 
+    image VARCHAR(15)
+);
+
+INSERT INTO adopt(animal, breed, city, body, image) VALUES('Dog', 'labrador', 'Banglore', 'This is a young labrador pup found on 15th March', '3.jpg');
+
+-----------------------------------------------------------------------
+
+pip3 install Flask
+pip3 install Flask-MySQLdb
+pip3 install Flask-WTF
+pip3 install passlib
+
